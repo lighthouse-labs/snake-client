@@ -1,5 +1,3 @@
-const {connect} = require('./client');
-
 const stdin = process.stdin;
 
 const setupInput = function() {
@@ -8,9 +6,6 @@ const setupInput = function() {
   stdin.resume();
   stdin.on("data", handleUserInput);
   return stdin;
-
-
-
 };
 
 const handleUserInput = function() {
@@ -19,10 +14,5 @@ const handleUserInput = function() {
       // console.log('press exit')
       process.exit();
     }
-    
   });
 };
-
-setupInput();
-console.log("Connecting ...");
-connect();
