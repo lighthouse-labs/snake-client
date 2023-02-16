@@ -16,21 +16,34 @@ const handleUserInput = function(key) {
     console.log('press exit');
     process.exit();
   }
+  let currentDirection = 'start';
   if (key === 'w') {
     // "Move: up" - move up one square (unless facing down)
-    connection.write("Move: up");
+    currentDirection === 'up'
+    if(currentDirection !== 'down'){
+      connection.write("Move: up");
+    }
   }
   if (key === 'a') {
     // // "Move: left" - move left one square (unless facing right)
-    connection.write("Move: left");
+    currentDirection === 'left'
+    if(currentDirection !== 'right'){
+      connection.write("Move: left");
+    }
   }
   if (key === 's') {
     // // "Move: down" - move down one square (unless facing up)
+    currentDirection === 'down'
+    if(currentDirection !== 'up'){
     connection.write("Move: down");
+    }
   }
   if (key === 'd') {
     // // "Move: right" - move left one square (unless facing left)
+    currentDirection === 'right'
+    if(currentDirection !== 'left'){
     connection.write("Move: right");
+    }
   }
 };
 
