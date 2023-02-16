@@ -19,34 +19,39 @@ const handleUserInput = function(key) {
   let currentDirection = 'start';
   if (key === 'w') {
     // "Move: up" - move up one square (unless facing down)
-    currentDirection === 'up'
-    if(currentDirection !== 'down'){
+    currentDirection === 'up';
+    if (currentDirection !== 'down') {
       connection.write("Move: up");
     }
   }
   if (key === 'a') {
     // // "Move: left" - move left one square (unless facing right)
-    currentDirection === 'left'
-    if(currentDirection !== 'right'){
+    currentDirection === 'left';
+    if (currentDirection !== 'right') {
       connection.write("Move: left");
     }
   }
   if (key === 's') {
     // // "Move: down" - move down one square (unless facing up)
-    currentDirection === 'down'
-    if(currentDirection !== 'up'){
-    connection.write("Move: down");
+    currentDirection === 'down';
+    if (currentDirection !== 'up') {
+      connection.write("Move: down");
     }
   }
   if (key === 'd') {
     // // "Move: right" - move left one square (unless facing left)
-    currentDirection === 'right'
-    if(currentDirection !== 'left'){
-    connection.write("Move: right");
+    currentDirection === 'right';
+    if (currentDirection !== 'left') {
+      connection.write("Move: right");
     }
   }
+  if (key === 'q') {
+    connection.write("Say: QQQQQQQQQQQQQQ");
+  }
+  if (key === 'e') {
+    connection.write("Say: LIGHTSPEED");
+  }
 };
-
 
 
 
