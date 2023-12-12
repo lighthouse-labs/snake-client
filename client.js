@@ -1,28 +1,26 @@
 const net = require("net");
-const {IP, PORT} = require('./constants');
+const { IP, PORT } = require('./constant')
 
-const connect = function() {
+// establishes a connection with the game server
+const connect = function () {
   const conn = net.createConnection({
-    host: IP,
-    port: PORT,
+    host: IP, // IP address here,
+    port: PORT // PORT number here,
   });
 
   // interpret incoming data as text
   conn.setEncoding("utf8");
-  conn.on("data", (message)=>{
-    console.log(message);
-    
+
+  conn.on('data', message => {
+      console.log(message);
   });
-  
-  conn.on("connect", ()=>{
-    console.log('Successfully connected to game server');
-    conn.write("Name: LXK");
-    // setInterval(()=>{conn.write("Move: up")},500)
+
+  conn.on("connect", () => {
+      console.log("Successfully connected to the game server")
+      conn.write("Name: Dar");
   });
 
   return conn;
 };
 
-module.exports = {
-  connect,
-};
+module.exports = connect;
